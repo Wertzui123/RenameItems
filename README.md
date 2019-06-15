@@ -4,11 +4,11 @@ The .phar can be found <a href="https://poggit.pmmp.io/Wertzui123/RenameItems/Re
 
 # Permissions
 renameitems:
- default: op
- description: "Let you use all features of RenameItems"
-renameitems.rename.cmd:
- default: op
- description: "Let you use /rename"
+ <br>default: op
+ <br>description: "Let you use all features of RenameItems"
+<br>renameitems.rename.cmd:
+ <br>default: op
+ <br>description: "Let you use /rename"
  
 # Commands
 The command can be conigured via the config.yml
@@ -18,7 +18,7 @@ Contact me on <a href="https://discord.gg/6a3AJzW">discord</a> or open an <a hre
 
 # Credits
 Author: Wertzui123
-Icon by: Icon is comming soon
-
-
+<br>Icon by: Icon is comming soon
+<br>
+<br>
 **Have fun with this plugin.**
