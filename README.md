@@ -14,7 +14,7 @@ renameitems:
 The command can be conigured via the config.yml
 
 # Support
-Contact me on <a href="https://discord.gg/6a3AJzW">discord</a> or open an <a href="https://github.com/Wertzui123/RenameItems/issues/>issue</a>.
+Contact me on <a href="https://discord.gg/6a3AJzW">discord</a> or open an <a href="https://github.com/Wertzui123/RenameItems/issues/">issue</a>.
 
 # Credits
 Author: Wertzui123
