@@ -1,4 +1,6 @@
 # RenameItems
+<a href="https://poggit.pmmp.io/p/RenameItems"><img src="https://poggit.pmmp.io/shield.state/RenameItems"></a>
+<a href="https://poggit.pmmp.io/p/RenameItems"><img src="https://poggit.pmmp.io/shield.api/RenameItems"></a>
 A PocketMine-MP plugin to rename the item in your hand via command.
 The .phar can be found <a href="https://poggit.pmmp.io/ci/Wertzui123/RenameItems/RenameItems/">on poggit</a>.
 
