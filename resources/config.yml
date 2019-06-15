@@ -1,0 +1,9 @@
+---
+version: 1.0
+
+#COMMAND
+command: "rename"
+command_description: "Change item names"
+usage: "§cUsage: /rename <newname>"
+command_aliases: []
+...
