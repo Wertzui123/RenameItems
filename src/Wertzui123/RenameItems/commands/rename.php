@@ -38,6 +38,11 @@ class rename extends Command
                     $sender->sendMessage($msgs["hold_item"]);
                     return;
                 }
+                if(in_array($item->getId(), $this->config["banned_items"]) && !$sender->hasPermission("renameitems.blockeditems.bypass")){
+                    $sender->sendMessage($msgs["item_banned"]);
+                    return;
+                }
+
                 $item->setCustomName(implode(" ", $args));
                 $sender->getInventory()->setItemInHand($item);
                 $sender->sendMessage(str_replace("{name}", implode(" ", $args), $msgs["succes"]));
