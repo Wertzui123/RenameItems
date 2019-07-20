@@ -2,5 +2,6 @@
 run_ingame: "§cYou must run this command ingame!"
 no_permission: "§cYou're not allowed to use /rename!"
 hold_item: "§cPlease hold an item in your hand!"
+item_banned: "§cThis item can't be renamed, because it's banned by an admin!"
 succes: "§aYou changed the items name to §e{name}!"
 ...
