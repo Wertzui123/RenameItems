@@ -1,9 +1,15 @@
 ---
-version: 1.0
+version: 1.1
 
 #COMMAND
 command: "rename"
 command_description: "Change item names"
 usage: "§cUsage: /rename <newname>"
 command_aliases: []
+
+#OTHER
+banned_items:
+  - 1
+  - 2
+  - 3
 ...
