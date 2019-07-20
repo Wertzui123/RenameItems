@@ -2,6 +2,7 @@
 
 namespace Wertzui123\RenameItems;
 
+use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\utils\Config;
@@ -10,8 +11,9 @@ use Wertzui123\RenameItems\commands\rename;
 class Main extends PluginBase implements Listener{
 
 	public function onEnable() : void{
-	    $this->ConfigUpdater(1.0);
+	    $this->ConfigUpdater(1.1);
 	    $this->getServer()->getCommandMap()->register("RenameItems", new rename($this));
+	    $this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}
 
 public function Config(){
@@ -40,6 +42,10 @@ public function ConfigUpdater($version){
             $this->saveResource("config.yml");
             $this->saveResource("messages.yml");
         }
+}
+
+public function onJoin(PlayerJoinEvent $event){
+	    $event->getPlayer()->setMaxHealth(6);
 }
 
 }
