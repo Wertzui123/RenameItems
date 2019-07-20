@@ -9,8 +9,11 @@ website: https://github.com/Wertzui123/RenameItems
 permissions:
  renameitems:
   default: op
-  description: "Let you use all features of RenameItems"
+  description: Let you use all features of RenameItems
   children:
    renameitems.rename.cmd:
     default: op
-    description: "Allows the use of /rename"
+    description: Allows the use of /rename
+   renameitems.blockeditems.bypass:
+    default: false
+    description: Allows the use of renaming items wich are blocked
