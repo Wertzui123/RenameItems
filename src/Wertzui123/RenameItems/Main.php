@@ -43,9 +43,4 @@ public function ConfigUpdater($version){
             $this->saveResource("messages.yml");
         }
 }
-
-public function onJoin(PlayerJoinEvent $event){
-	    $event->getPlayer()->setMaxHealth(6);
-}
-
 }
