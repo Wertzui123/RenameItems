@@ -1,0 +1,22 @@
+---
+command:
+  rename:
+    runIngame: "§cPlease run this command ingame!"
+    noPermission: "§cYou don't have the permission to use this command!"
+    noItem: "§cPlease hold an item in your main hand!"
+    blocked: "§cYou cannot rename this item!"
+    success: "§aYou successfully renamed the item in your hand to §e{name}§a."
+  block:
+    runIngame: "§cPlease run this command ingame!"
+    noPermission: "§cYou don't have the permission to use this command!"
+    noItem: "§cPlease hold an item in your main hand!"
+    blocked: "§cThis item is already blocked!"
+    unblocked: "§cThis item is not blocked!"
+    success: "§aYou successfully blocked the item in your hand."
+    unblock_success: "§aYou successfully unblocked the item in your hand."
+ui:
+  rename:
+    title: "Rename this item"
+    description: "Type in the new name of the item here:"
+    replacement: "Any name you wish"
+...

@@ -1,6 +1,6 @@
 name: RenameItems
 main: Wertzui123\RenameItems\Main
-version: 1.0
+version: 2.0
 api: 3.0.0
 load: POSTWORLD
 author: Wertzui123
@@ -8,12 +8,15 @@ description: A simple rename plugin by Wertzui123
 website: https://github.com/Wertzui123/RenameItems
 permissions:
  renameitems:
-  default: op
+  default: false
   description: Let you use all features of RenameItems
   children:
-   renameitems.rename.cmd:
+   renameitems.cmd.rename:
     default: op
-    description: Allows the use of /rename
+    description: Permission for /rename
+   renameitems.cmd.block:
+    default: false
+    description: Permission for /block
    renameitems.blockeditems.bypass:
     default: false
-    description: Allows the use of renaming items wich are blocked
+    description: Permission for renaming blocked items
