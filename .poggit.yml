@@ -6,6 +6,6 @@ projects:
   RenameItems:
     path: ""
     libs:
-      - src: https://github.com/jojoe77777/FormAPI
+      - src: jojoe77777/FormAPI/FormAPI
         version: ^1.3.0
 ...
