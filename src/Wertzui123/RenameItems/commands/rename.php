@@ -46,9 +46,9 @@ class rename extends Command implements PluginIdentifiableCommand
             $this->plugin->openRenameUI($sender);
             return;
         }
-        $item->setCustomName(str_replace(['\n', "{line}"], "\n", implode(' ', $args)));
+        $item->setCustomName(str_replace('{line}', "\n", implode(' ', $args)));
         $sender->getInventory()->setItemInHand($item);
-        $sender->sendMessage($this->plugin->getMessage('command.rename.success', ["{name}" => str_replace(['\n', "{line}"], "\n", implode(' ', $args))]));
+        $sender->sendMessage($this->plugin->getMessage('command.rename.success', ["{name}" => str_replace('{line}', "\n", implode(' ', $args))]));
     }
 
     public function getPlugin(): Plugin
