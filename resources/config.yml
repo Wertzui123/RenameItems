@@ -1,6 +1,6 @@
 ---
 # Don't edit this if you don't know what you're doing
-config-version: 2.0
+config-version: 3.0
 
 # Configuration for all commands registered by RenameItems
 command:
@@ -15,11 +15,8 @@ command:
     command: "block"
     description: "Block the item in your hand from being renamed"
     usage: "/block"
-    aliases: []
+    aliases: ["blockrename"]
 
 # Items with these ids cannot be renamed
-blocked_items:
-  - 1
-  - 2
-  - 3
+blocked_items: []
 ...

@@ -6,20 +6,20 @@ namespace Wertzui123\RenameItems\commands;
 
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
-use pocketmine\command\PluginIdentifiableCommand;
 use pocketmine\plugin\Plugin;
+use pocketmine\plugin\PluginOwned;
 use Wertzui123\RenameItems\Main;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
-class block extends Command implements PluginIdentifiableCommand
+class block extends Command implements PluginOwned
 {
 
     private $plugin;
 
     public function __construct(Main $plugin)
     {
-        parent::__construct($plugin->getConfig()->getNested("command.block.command"), $plugin->getConfig()->getNested("command.block.description"), $plugin->getConfig()->getNested("command.block.usage"), $plugin->getConfig()->getNested("command.block.aliases"));
-        $this->setPermission("renameitems.cmd.block");
+        parent::__construct($plugin->getConfig()->getNested('command.block.command'), $plugin->getConfig()->getNested('command.block.description'), $plugin->getConfig()->getNested('command.block.usage'), $plugin->getConfig()->getNested('command.block.aliases'));
+        $this->setPermission('renameitems.command.block');
         $this->plugin = $plugin;
     }
 
@@ -39,16 +39,16 @@ class block extends Command implements PluginIdentifiableCommand
             return;
         }
         $block = true;
-        if(isset($args[0]) && $args[0] === "false"){
+        if (isset($args[0]) && $args[0] === 'false') {
             $block = false;
         }
-        if ($block){
-            if($this->plugin->isBlocked($item)) {
+        if ($block) {
+            if ($this->plugin->isBlocked($item)) {
                 $sender->sendMessage($this->plugin->getMessage('command.block.blocked'));
                 return;
             }
-        }else{
-            if(!$this->plugin->isBlocked($item)) {
+        } else {
+            if (!$this->plugin->isBlocked($item)) {
                 $sender->sendMessage($this->plugin->getMessage('command.block.unblocked'));
                 return;
             }
@@ -58,7 +58,7 @@ class block extends Command implements PluginIdentifiableCommand
         $sender->sendMessage($this->plugin->getMessage($block ? 'command.block.success' : 'command.block.unblock_success'));
     }
 
-    public function getPlugin(): Plugin
+    public function getOwningPlugin(): Plugin
     {
         return $this->plugin;
     }
