@@ -9,6 +9,7 @@
 |---------|------------------------------------------------|------------------------|-------------|----------------------------|
 | rename  | Rename the item in your hand                   | /rename <name: string> | /           | renameitems.command.rename |
 | block   | Block the item in your hand from being renamed | /bloc                  | blockrename | renameitems.command.block  |
+
 **All commands can be configured in the config file.**
 
 # Permissions
