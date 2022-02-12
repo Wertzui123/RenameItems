@@ -124,7 +124,7 @@ class Main extends PluginBase
             rename($this->getDataFolder() . 'config.yml', $this->getDataFolder() . 'config-' . $config_version . '.yml');
             rename($this->getDataFolder() . 'strings.yml', $this->getDataFolder() . 'strings-' . $config_version . '.yml');
             $this->saveResource('config.yml');
-            $this->saveResource('messages.yml');
+            $this->saveResource('strings.yml');
         }
     }
 
