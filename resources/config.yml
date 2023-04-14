@@ -1,6 +1,6 @@
 ---
 # Don't edit this if you don't know what you're doing
-config-version: 3.0
+config-version: 3.1
 
 # Configuration for all commands registered by RenameItems
 command:
@@ -17,6 +17,6 @@ command:
     usage: "/block"
     aliases: ["blockrename"]
 
-# Items with these ids cannot be renamed
+# Items with these IDs (e.g. trapped_chest; numeric IDs are not possible anymore!) cannot be renamed
 blocked_items: []
 ...

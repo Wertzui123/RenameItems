@@ -4,17 +4,18 @@ namespace Wertzui123\RenameItems;
 
 use jojoe77777\FormAPI\CustomForm;
 use pocketmine\item\Item;
+use pocketmine\item\StringToItemParser;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
-use Wertzui123\RenameItems\commands\block;
-use Wertzui123\RenameItems\commands\rename;
+use Wertzui123\RenameItems\commands\BlockCommand;
+use Wertzui123\RenameItems\commands\RenameCommand;
 
 class Main extends PluginBase
 {
 
     /** @var float */
-    const CONFIG_VERSION = 3.0;
+    const CONFIG_VERSION = 3.1;
 
     /** @var Config */
     private $stringsFile;
@@ -23,8 +24,8 @@ class Main extends PluginBase
     {
         $this->ConfigUpdater();
         $this->stringsFile = new Config($this->getDataFolder() . 'strings.yml', Config::YAML);
-        $this->getServer()->getCommandMap()->register('RenameItems', new rename($this));
-        $this->getServer()->getCommandMap()->register('RenameItems', new block($this));
+        $this->getServer()->getCommandMap()->register('RenameItems', new RenameCommand($this));
+        $this->getServer()->getCommandMap()->register('RenameItems', new BlockCommand($this));
     }
 
     /**
@@ -58,7 +59,15 @@ class Main extends PluginBase
      */
     public function isBlocked(Item $item)
     {
-        return in_array($item->getId(), $this->getConfig()->get('blocked_items')) || ($item->getNamedTag()->getTag('RenameItems') !== null && $item->getNamedTag()->getString('RenameItems') === 'blocked');
+        if ($item->getNamedTag()->getTag('RenameItems') !== null && $item->getNamedTag()->getString('RenameItems') === 'blocked') {
+            return true;
+        }
+        foreach (StringToItemParser::getInstance()->lookupAliases($item) as $alias) {
+            if (in_array($alias, $this->getConfig()->get('blocked_items'))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
