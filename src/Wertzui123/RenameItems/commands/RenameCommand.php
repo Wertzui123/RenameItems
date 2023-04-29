@@ -20,6 +20,7 @@ class RenameCommand extends Command implements PluginOwned
     {
         parent::__construct($plugin->getConfig()->getNested('command.rename.command'), $plugin->getConfig()->getNested('command.rename.description'), $plugin->getConfig()->getNested('command.rename.usage'), $plugin->getConfig()->getNested('command.rename.aliases'));
         $this->setPermissions(['renameitems.command.rename']);
+        $this->setPermissionMessage($plugin->getMessage('command.rename.noPermission'));
         $this->plugin = $plugin;
     }
 
@@ -27,10 +28,6 @@ class RenameCommand extends Command implements PluginOwned
     {
         if (!$sender instanceof Player) {
             $sender->sendMessage($this->plugin->getMessage('command.rename.runIngame'));
-            return;
-        }
-        if (!$sender->hasPermission($this->getPermissions()[0])) {
-            $sender->sendMessage($this->plugin->getMessage('command.rename.noPermission'));
             return;
         }
         $item = $sender->getInventory()->getItemInHand();

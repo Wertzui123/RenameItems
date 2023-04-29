@@ -20,6 +20,7 @@ class BlockCommand extends Command implements PluginOwned
     {
         parent::__construct($plugin->getConfig()->getNested('command.block.command'), $plugin->getConfig()->getNested('command.block.description'), $plugin->getConfig()->getNested('command.block.usage'), $plugin->getConfig()->getNested('command.block.aliases'));
         $this->setPermissions(['renameitems.command.block']);
+        $this->setPermissionMessage($plugin->getMessage('command.block.noPermission'));
         $this->plugin = $plugin;
     }
 
@@ -27,10 +28,6 @@ class BlockCommand extends Command implements PluginOwned
     {
         if (!$sender instanceof Player) {
             $sender->sendMessage($this->plugin->getMessage('command.block.runIngame'));
-            return;
-        }
-        if (!$sender->hasPermission($this->getPermissions()[0])) {
-            $sender->sendMessage($this->plugin->getMessage('command.block.noPermission'));
             return;
         }
         $item = $sender->getInventory()->getItemInHand();
