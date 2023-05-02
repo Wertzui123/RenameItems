@@ -1,6 +1,6 @@
 name: RenameItems
 main: Wertzui123\RenameItems\Main
-version: "3.1"
+version: "3.2"
 api: 5.0.0
 author: Wertzui123
 description: A simple rename plugin

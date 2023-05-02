@@ -11,6 +11,7 @@ command:
     runIngame: "§cPlease run this command ingame!"
     noPermission: "§cYou don't have the permission to use this command!"
     noItem: "§cPlease hold an item in your main hand!"
+    cannotChangeBlockState: "§cYou cannot block/unblock this item as all items of this type cannot be renamed on this server!"
     blocked: "§cThis item is already blocked! You can unblock it with §b/block false§c."
     unblocked: "§cThis item is not blocked!"
     success: "§aYou successfully blocked the item in your hand."

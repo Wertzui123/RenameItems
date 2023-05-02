@@ -15,7 +15,7 @@ class Main extends PluginBase
 {
 
     /** @var float */
-    const CONFIG_VERSION = 3.1;
+    const CONFIG_VERSION = 3.2;
 
     /** @var Config */
     private $stringsFile;
@@ -68,6 +68,23 @@ class Main extends PluginBase
             }
         }
         return false;
+    }
+
+    /**
+     * @api
+     * Checks whether the given item can be blocked/unblocked using the /block command
+     * This effectively checks whether the item is force-blocked by the config and if so returns false
+     * @param Item $item
+     * @return bool
+     */
+    public function canChangeBlockState(Item $item)
+    {
+        foreach (StringToItemParser::getInstance()->lookupAliases($item) as $alias) {
+            if (in_array($alias, $this->getConfig()->get('blocked_items'))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**

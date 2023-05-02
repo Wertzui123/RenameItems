@@ -35,6 +35,10 @@ class BlockCommand extends Command implements PluginOwned
             $sender->sendMessage($this->plugin->getMessage('command.block.noItem'));
             return;
         }
+        if (!$this->plugin->canChangeBlockState($item)) {
+            $sender->sendMessage($this->plugin->getMessage('command.block.cannotChangeBlockState'));
+            return;
+        }
         $block = true;
         if (isset($args[0]) && $args[0] === 'false') {
             $block = false;

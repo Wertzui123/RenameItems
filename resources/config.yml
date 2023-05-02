@@ -1,6 +1,6 @@
 ---
 # Don't edit this if you don't know what you're doing
-config-version: 3.1
+config-version: 3.2
 
 # Configuration for all commands registered by RenameItems
 command:
